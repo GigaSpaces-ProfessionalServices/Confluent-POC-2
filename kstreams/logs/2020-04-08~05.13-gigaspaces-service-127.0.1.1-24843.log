@@ -1,0 +1,52 @@
+2020-04-08 05:13:56,905  SEVERE [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1] Encountered the following error during processing:; Caused by: org.openspaces.core.space.CannotFindSpaceException: Failed to find space with url jini://*/*/words; nested exception is com.j_spaces.core.client.FinderException: LookupFinder failed to find service using the following service attributes: 
+
+	 Service attributes: [net.jini.lookup.entry.Name(name=words)]
+	 Service attributes: [com.j_spaces.lookup.entry.State(state=started,electable=null,replicable=null)]
+	 Lookup timeout: [5000]
+	 Class: com.j_spaces.core.service.Service
+	 Jini Lookup Groups: [xap-15.0.0]
+	 Jini Lookup Locators: []
+	 Number of Lookup Services: 0
+
+	at org.openspaces.core.space.InternalSpaceFactory.create(InternalSpaceFactory.java:113)
+	at org.openspaces.core.space.UrlSpaceFactoryBean.doCreateSpace(UrlSpaceFactoryBean.java:101)
+	at org.openspaces.core.space.AbstractSpaceFactoryBean.afterPropertiesSet(AbstractSpaceFactoryBean.java:200)
+	at org.openspaces.core.space.UrlSpaceConfigurer.create(UrlSpaceConfigurer.java:369)
+	at org.openspaces.core.space.UrlSpaceConfigurer.space(UrlSpaceConfigurer.java:382)
+	at org.openspaces.core.GigaSpaceConfigurer.<init>(GigaSpaceConfigurer.java:89)
+	at com.gigaspaces.demo.kstreams.gks.GigaStateStore.init(GigaStateStore.java:117)
+	at org.apache.kafka.streams.processor.internals.AbstractTask.registerStateStores(AbstractTask.java:234)
+	at org.apache.kafka.streams.processor.internals.StreamTask.initializeStateStores(StreamTask.java:257)
+	at org.apache.kafka.streams.processor.internals.AssignedTasks.initializeNewTasks(AssignedTasks.java:72)
+	at org.apache.kafka.streams.processor.internals.TaskManager.updateNewAndRestoringTasks(TaskManager.java:325)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:867)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:805)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:774)
+Caused by: com.j_spaces.core.client.FinderException: LookupFinder failed to find service using the following service attributes: 
+
+	 Service attributes: [net.jini.lookup.entry.Name(name=words)]
+	 Service attributes: [com.j_spaces.lookup.entry.State(state=started,electable=null,replicable=null)]
+	 Lookup timeout: [5000]
+	 Class: com.j_spaces.core.service.Service
+	 Jini Lookup Groups: [xap-15.0.0]
+	 Jini Lookup Locators: []
+	 Number of Lookup Services: 0
+
+	at com.j_spaces.core.client.LookupFinder.find(LookupFinder.java:142)
+	at com.j_spaces.core.client.SpaceFinder.findJiniSpace(SpaceFinder.java:580)
+	at com.j_spaces.core.client.SpaceFinder.findService(SpaceFinder.java:438)
+	at com.j_spaces.core.client.SpaceFinder.findService(SpaceFinder.java:398)
+	at com.j_spaces.core.client.SpaceFinder.find(SpaceFinder.java:330)
+	at com.gigaspaces.client.SpaceProxyFactory.createSpaceProxy(SpaceProxyFactory.java:94)
+	at org.openspaces.core.space.InternalSpaceFactory.create(InternalSpaceFactory.java:108)
+	... 13 more
+
+2020-04-08 05:13:56,914  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1] State transition from PARTITIONS_ASSIGNED to PENDING_SHUTDOWN
+2020-04-08 05:13:56,915  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1] Shutting down
+2020-04-08 05:13:56,916  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 05:13:56,916  INFO [org.apache.kafka.clients.producer.KafkaProducer] - [Producer clientId=streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2020-04-08 05:13:56,931  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+2020-04-08 05:13:56,932  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23] State transition from REBALANCING to ERROR
+2020-04-08 05:13:56,933  SEVERE [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23] All stream threads have died. The instance will be in error state and should be closed.
+2020-04-08 05:13:56,934  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23-StreamThread-1] Shutdown complete
+2020-04-08 05:13:56,937  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-58ef93a0-79d8-43b4-bf45-e1e46b7bbc23] State transition from ERROR to PENDING_SHUTDOWN

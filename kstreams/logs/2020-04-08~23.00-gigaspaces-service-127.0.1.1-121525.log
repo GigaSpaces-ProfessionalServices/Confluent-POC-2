@@ -1,0 +1,5 @@
+2020-04-08 23:00:54,149  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-78b76f2c-a0b7-4fcc-8579-8bb6f541d282-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:00:54,155  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-78b76f2c-a0b7-4fcc-8579-8bb6f541d282-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:00:54,155  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-78b76f2c-a0b7-4fcc-8579-8bb6f541d282-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2020-04-08 23:00:54,156  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-78b76f2c-a0b7-4fcc-8579-8bb6f541d282] State transition from REBALANCING to RUNNING
+2020-04-08 23:34:05,852  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-78b76f2c-a0b7-4fcc-8579-8bb6f541d282] State transition from RUNNING to PENDING_SHUTDOWN

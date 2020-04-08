@@ -1,0 +1,14 @@
+com/gigaspaces/demo/kstreams/gks/GigaReadableStore.class
+com/gigaspaces/demo/kstreams/gks/GigaStoreType.class
+com/gigaspaces/demo/kstreams/gks/GigaWritableStore.class
+com/gigaspaces/demo/kstreams/processors/CountingProcessorSupplier.class
+com/gigaspaces/demo/kstreams/gks/GigaChangeLogger.class
+com/gigaspaces/demo/kstreams/gks/GigaStateStoreWrapper.class
+com/gigaspaces/demo/kstreams/App$1.class
+com/gigaspaces/demo/kstreams/gks/GigaStoreBuilder.class
+com/gigaspaces/demo/kstreams/App.class
+com/gigaspaces/demo/kstreams/serdes/JsonPOJOSerializer.class
+com/gigaspaces/demo/kstreams/gks/GigaStateStore.class
+com/gigaspaces/demo/kstreams/processors/CountingProcessorSupplier$CountingProcessor.class
+com/gigaspaces/demo/kstreams/SerdesFactory.class
+com/gigaspaces/demo/kstreams/serdes/JsonPOJODeserializer.class

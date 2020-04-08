@@ -1,0 +1,10 @@
+2020-04-08 23:40:43,853  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3-StreamThread-1] partition assignment took 106 ms.
+	current active tasks: [0_0]
+	current standby tasks: []
+	previous active tasks: []
+
+2020-04-08 23:40:45,435  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:40:45,436  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:40:45,437  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2020-04-08 23:40:45,439  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3] State transition from REBALANCING to RUNNING
+2020-04-08 23:40:45,448  INFO [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] - [Consumer clientId=streams-app-b60af23c-6a43-4ec8-a423-a96ae62c77e3-StreamThread-1-consumer, groupId=streams-app] Setting offset for partition source-topic-0 to the committed offset FetchPosition{offset=10, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=jay-laptop:9092 (id: 0 rack: null), epoch=0}}

@@ -1,0 +1,12 @@
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaStoreType.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaStoreBuilder.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/serdes/JsonPOJOSerializer.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/processors/CountingProcessorSupplier.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/SerdesFactory.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/serdes/JsonPOJODeserializer.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaStateStore.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/App.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaChangeLogger.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaReadableStore.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaWritableStore.java
+/home/jay/work/gigaspace/Confluent-POC-2/kstreams/src/main/java/com/gigaspaces/demo/kstreams/gks/GigaStateStoreWrapper.java

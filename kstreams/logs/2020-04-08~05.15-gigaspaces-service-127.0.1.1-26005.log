@@ -1,0 +1,19 @@
+2020-04-08 05:15:03,378  SEVERE [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1] Encountered the following error during processing:; Caused by: java.lang.NullPointerException
+	at com.gigaspaces.demo.kstreams.gks.GigaStateStore.init(GigaStateStore.java:123)
+	at org.apache.kafka.streams.processor.internals.AbstractTask.registerStateStores(AbstractTask.java:234)
+	at org.apache.kafka.streams.processor.internals.StreamTask.initializeStateStores(StreamTask.java:257)
+	at org.apache.kafka.streams.processor.internals.AssignedTasks.initializeNewTasks(AssignedTasks.java:72)
+	at org.apache.kafka.streams.processor.internals.TaskManager.updateNewAndRestoringTasks(TaskManager.java:325)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:867)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:805)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:774)
+
+2020-04-08 05:15:03,394  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1] State transition from PARTITIONS_ASSIGNED to PENDING_SHUTDOWN
+2020-04-08 05:15:03,395  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1] Shutting down
+2020-04-08 05:15:03,397  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 05:15:03,398  INFO [org.apache.kafka.clients.producer.KafkaProducer] - [Producer clientId=streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2020-04-08 05:15:03,417  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+2020-04-08 05:15:03,418  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443] State transition from REBALANCING to ERROR
+2020-04-08 05:15:03,419  SEVERE [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443] All stream threads have died. The instance will be in error state and should be closed.
+2020-04-08 05:15:03,419  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443-StreamThread-1] Shutdown complete
+2020-04-08 05:15:03,423  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-050a06d2-5a7a-4b08-9984-6001eff65443] State transition from ERROR to PENDING_SHUTDOWN

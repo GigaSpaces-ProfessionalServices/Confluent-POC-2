@@ -1,0 +1,48 @@
+2020-04-08 05:29:18,809  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 05:29:18,825  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 05:29:18,825  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2020-04-08 05:29:18,827  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f] State transition from REBALANCING to RUNNING
+2020-04-08 05:29:18,831  INFO [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Found no committed offset for partition source-topic-0
+2020-04-08 05:29:18,850  INFO [org.apache.kafka.clients.consumer.internals.SubscriptionState] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Resetting offset for partition source-topic-0 to offset 0.
+2020-04-08 05:30:28,342  INFO [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Group coordinator jay-laptop:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2020-04-08 05:30:28,468  INFO [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Discovered group coordinator jay-laptop:9092 (id: 2147483647 rack: null)
+2020-04-08 05:30:37,833  INFO [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Attempt to heartbeat failed for since member id streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer-f75a44d0-d230-4897-8375-6f364fdb6952 is not valid.
+2020-04-08 05:31:07,182  SEVERE [org.apache.kafka.streams.processor.internals.AssignedStreamsTasks] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] Failed to process stream task 0_0 due to the following error:; Caused by: java.lang.NullPointerException
+	at com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier$CountingProcessor.process(CountingProcessorSupplier.java:51)
+	at com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier$CountingProcessor.process(CountingProcessorSupplier.java:22)
+	at org.apache.kafka.streams.processor.internals.ProcessorNode.process(ProcessorNode.java:117)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:201)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:180)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:133)
+	at org.apache.kafka.streams.processor.internals.SourceNode.process(SourceNode.java:87)
+	at org.apache.kafka.streams.processor.internals.StreamTask.process(StreamTask.java:366)
+	at org.apache.kafka.streams.processor.internals.AssignedStreamsTasks.process(AssignedStreamsTasks.java:199)
+	at org.apache.kafka.streams.processor.internals.TaskManager.process(TaskManager.java:420)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:890)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:805)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:774)
+
+2020-04-08 05:31:07,185  SEVERE [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] Encountered the following error during processing:; Caused by: java.lang.NullPointerException
+	at com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier$CountingProcessor.process(CountingProcessorSupplier.java:51)
+	at com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier$CountingProcessor.process(CountingProcessorSupplier.java:22)
+	at org.apache.kafka.streams.processor.internals.ProcessorNode.process(ProcessorNode.java:117)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:201)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:180)
+	at org.apache.kafka.streams.processor.internals.ProcessorContextImpl.forward(ProcessorContextImpl.java:133)
+	at org.apache.kafka.streams.processor.internals.SourceNode.process(SourceNode.java:87)
+	at org.apache.kafka.streams.processor.internals.StreamTask.process(StreamTask.java:366)
+	at org.apache.kafka.streams.processor.internals.AssignedStreamsTasks.process(AssignedStreamsTasks.java:199)
+	at org.apache.kafka.streams.processor.internals.TaskManager.process(TaskManager.java:420)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:890)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:805)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:774)
+
+2020-04-08 05:31:07,186  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] State transition from RUNNING to PENDING_SHUTDOWN
+2020-04-08 05:31:07,187  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] Shutting down
+2020-04-08 05:31:07,194  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 05:31:07,197  INFO [org.apache.kafka.clients.producer.KafkaProducer] - [Producer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2020-04-08 05:31:07,204  INFO [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] - [Consumer clientId=streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1-consumer, groupId=streams-app] Attempt to heartbeat failed for since member id  is not valid.
+2020-04-08 05:31:07,217  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+2020-04-08 05:31:07,218  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f] State transition from RUNNING to ERROR
+2020-04-08 05:31:07,219  SEVERE [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f] All stream threads have died. The instance will be in error state and should be closed.
+2020-04-08 05:31:07,220  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-c0e03d4d-f09f-4bbf-8891-e873c9cc055f-StreamThread-1] Shutdown complete

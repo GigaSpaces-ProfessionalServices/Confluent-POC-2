@@ -1,0 +1,14 @@
+2020-04-08 23:50:13,393  INFO [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor] - stream-thread [streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-consumer] Assigned tasks to clients as {95c912e2-bbe2-4d20-8fb2-09c85c1a3517=[activeTasks: ([0_0]) standbyTasks: ([]) assignedTasks: ([0_0]) prevActiveTasks: ([]) prevStandbyTasks: ([]) prevAssignedTasks: ([]) capacity: 1]}.
+2020-04-08 23:50:13,422  INFO [org.apache.kafka.clients.consumer.internals.AbstractCoordinator] - [Consumer clientId=streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-consumer, groupId=streams-app] Successfully joined group with generation 24
+2020-04-08 23:50:13,433  INFO [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] - [Consumer clientId=streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-consumer, groupId=streams-app] Setting newly assigned partitions: source-topic-0
+2020-04-08 23:50:13,435  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1] State transition from PARTITIONS_REVOKED to PARTITIONS_ASSIGNED
+2020-04-08 23:50:13,478  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1] partition assignment took 43 ms.
+	current active tasks: [0_0]
+	current standby tasks: []
+	previous active tasks: []
+
+2020-04-08 23:50:15,044  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:50:15,045  INFO [org.apache.kafka.clients.consumer.KafkaConsumer] - [Consumer clientId=streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2020-04-08 23:50:15,046  INFO [org.apache.kafka.streams.processor.internals.StreamThread] - stream-thread [streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2020-04-08 23:50:15,048  INFO [org.apache.kafka.streams.KafkaStreams] - stream-client [streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517] State transition from REBALANCING to RUNNING
+2020-04-08 23:50:15,054  INFO [org.apache.kafka.clients.consumer.internals.ConsumerCoordinator] - [Consumer clientId=streams-app-95c912e2-bbe2-4d20-8fb2-09c85c1a3517-StreamThread-1-consumer, groupId=streams-app] Setting offset for partition source-topic-0 to the committed offset FetchPosition{offset=10, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=jay-laptop:9092 (id: 0 rack: null), epoch=0}}
