@@ -1,18 +1,15 @@
 package com.gigaspaces.demo.kstreams.processors;
 
 import com.gigaspaces.demo.kstreams.gks.GigaStateStore;
-import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.apache.kafka.streams.processor.ProcessorSupplier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class CountingProcessorSupplier implements ProcessorSupplier<String, String> {
-
+    public static String STORE_NAME = "wordCount_store";
     @Override
     public Processor<String, String> get() {
         return new CountingProcessor();
@@ -34,7 +31,7 @@ public class CountingProcessorSupplier implements ProcessorSupplier<String, Stri
         @Override
         public void init(ProcessorContext processorContext) {
             this.context = processorContext;
-            store = (GigaStateStore) context.getStateStore(GigaStateStore.STORE_NAME);
+            store = (GigaStateStore) context.getStateStore(STORE_NAME);
         }
 
         @Override
