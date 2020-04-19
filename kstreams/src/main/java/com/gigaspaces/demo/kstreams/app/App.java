@@ -31,7 +31,7 @@ public class App {
     props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
     return props;
   }
-  public static final String STORE_NAME = "wordcount-store";
+  public static final String STORE_NAME = CountingProcessorSupplier.STORE_NAME;
   public static final String SOURCE_TOPIC = "source-topic";
   public static final String TARGET_TOPIC = "target-topic";
 

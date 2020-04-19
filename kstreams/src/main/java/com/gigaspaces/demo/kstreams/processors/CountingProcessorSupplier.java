@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class CountingProcessorSupplier implements ProcessorSupplier<String, String> {
-    public static String STORE_NAME = "wordCount_store";
+    public static String STORE_NAME = "wordcount-store";
     @Override
     public Processor<String, String> get() {
         return new CountingProcessor();
