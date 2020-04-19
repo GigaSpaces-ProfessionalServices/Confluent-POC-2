@@ -2,6 +2,7 @@ package com.gigaspaces.demo.kstreams.app;
 
 import com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier;
 import com.gigaspaces.demo.kstreams.gks.GigaStoreBuilder;
+import com.gigaspaces.demo.kstreams.gks.Utils;
 import java.util.Properties;
 
 import com.gigaspaces.document.SpaceDocument;
@@ -75,7 +76,7 @@ public class App {
     //start notify
 
     SQLQuery<SpaceDocument> template =
-            new SQLQuery<SpaceDocument>(STORE_NAME, "value > 1");
+            new SQLQuery<SpaceDocument>(Utils.convertToValidJavaName(STORE_NAME), "value > 1");
     SpaceDocument[] results = client.readMultiple(template);
 
     System.out.println("Current snapshot of the state store data where word count id greater than 1");
