@@ -1,0 +1,24 @@
+Apr 19, 2020 3:41:33 PM com.gigaspaces.admin.cli.RuntimeInfo logRuntimeInfo
+INFO: Starting space...
+********************************** System Report ***********************************
+GigaSpaces XAP 15.2.0
+    Home: /Users/yoramweinreb/work/Confluent-POC-2/kstreams/bin
+    Lookup Groups: xap-15.2.0
+    Lookup Locators: 
+Java:
+    Java Runtime: Java(TM) SE Runtime Environment 1.8.0_211-b12 (Oracle Corporation)
+    Java VM: Java HotSpot(TM) 64-Bit Server VM 25.211-b12 (Oracle Corporation)
+    Java Home: /Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre
+    Memory: Currently used 25MB, Current heap size 391MB, Max heap size 7635MB
+Operating System: Mac OS X [version=10.14.6, architecture=x86_64, processors=16]
+Process Id: 63499
+Network:
+    Local Host: [10.0.0.101/10.0.0.101] 
+    en0: en0 [IP addresses: fe80:0:0:0:74:64f1:31e4:5cfd%en0 | 10.0.0.101]
+************************************************************************************
+Apr 19, 2020 3:41:33 PM com.gigaspaces.admin.cli.RuntimeInfo logRuntimeInfo
+INFO: Starting Lookup Service...
+Apr 19, 2020 3:41:33 PM com.sun.jini.reggie.GigaRegistrar init
+INFO: Started Lookup Service [duration=0.207s, groups=[xap-15.2.0], service-id=5a483889-e758-498c-8f1a-250d99ce5ad3, locator=jini://10.0.0.101:4174/]
+Apr 19, 2020 3:41:34 PM com.gigaspaces.internal.server.space.SpaceImpl startInternal
+INFO: Space started [duration=0.679s, url=/./mySpace?schema=default&groups=xap-15.2.0&state=started, policy=all-in-cache, persistency-mode=memory]
