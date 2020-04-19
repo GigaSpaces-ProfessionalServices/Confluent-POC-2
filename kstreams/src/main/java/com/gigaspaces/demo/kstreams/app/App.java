@@ -1,4 +1,4 @@
-package com.gigaspaces.demo.kstreams;
+package com.gigaspaces.demo.kstreams.app;
 
 import com.gigaspaces.demo.kstreams.processors.CountingProcessorSupplier;
 import com.gigaspaces.demo.kstreams.gks.GigaStoreBuilder;
@@ -54,11 +54,10 @@ public class App {
             new SQLQuery<SpaceDocument>("words", "value > 1");
     SpaceDocument[] results = client.readMultiple(template);
 
-    System.out.println("Start First Time Only");
+    System.out.println("Current snapshot of the state store data where word count id greater than 1");
     for (SpaceDocument result :results){
       System.out.println(result.getProperty("key")+" -> "+result.getProperty("value"));
     }
-    System.out.println("End First Time Only");
 
     SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNotifyContainerConfigurer(client)
             .template(new SpaceDocument())
@@ -74,6 +73,7 @@ public class App {
 
 // start the listener
     notifyEventListenerContainer.start();
+    System.out.println("Subscribe to updates for any word that satisfy the condition (greater than 1 occurrence)");
     // Add shutdown hook to respond to SIGTERM and gracefully close Kafka Streams
     Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
   }

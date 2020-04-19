@@ -1,7 +1,6 @@
 package com.gigaspaces.demo.kstreams.gks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gigaspaces.demo.kstreams.SerdesFactory;
 
 import java.rmi.RemoteException;
 
@@ -49,9 +48,6 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 
 public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> {
-
-    /* In Elasticsearch, an INDEX can be thought as logical area much like a db in a dbms or space in Gigaspaces.
-     */
     private Class<K> Obj1;
     private Class<V> Obj2;
 
@@ -60,19 +56,11 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
 
     public static String STORE_NAME = "GigaStateStore";
 
-    private final String hostAddr;
 
-    private final ObjectMapper mapper = new ObjectMapper();
-    private GigaChangeLogger<K,V> changeLogger = null;
     private GigaSpace client;
     private ProcessorContext context;
-    private long updateTimestamp;
-    //private Document value;
-    private String key;
-    //private Serde<Document> docSerdes;
 
     public GigaStateStore(String hostAddr,Class<K> Obj1,Class<V> Obj2) {
-        this.hostAddr = hostAddr;
         this.Obj1 = Obj1;
         this.Obj2 = Obj2;
     }
@@ -82,7 +70,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
         if (key == null) {
             return null;
         }
-        SpaceDocument spaceDocument = client.readById(new IdQuery<SpaceDocument>(TYPE_DESCRIPTOR_NAME, key));
+        SpaceDocument spaceDocument = client.readById(new IdQuery<>(TYPE_DESCRIPTOR_NAME, key));
         if( spaceDocument != null ) {
             V value = spaceDocument.getProperty("value");
             return value;
@@ -103,7 +91,6 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
 
         client.write(spaceDocument);
 
-        this.updateTimestamp = System.currentTimeMillis();
     }
 
     @Override // StateStore
@@ -118,7 +105,6 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
         UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("jini://*/*/" + INDEX);
         client = new GigaSpaceConfigurer(configurer).gigaSpace();
 
-      //  HashMap<String,Long> map = new HashMap<>();
         // register type
         SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder(TYPE_DESCRIPTOR_NAME)
                 .idProperty("key", false, SpaceIndexType.EQUAL)
@@ -129,14 +115,6 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
 
         client.getTypeManager().registerTypeDescriptor(typeDescriptor);
 
-//        docSerdes = SerdesFactory.from(Document.class);
-
-  /*      StateSerdes<K,V> serdes = new StateSerdes(
-                name(),
-                Serdes.String(),
-                docSerdes);*/
-
-//        changeLogger = new GigaChangeLogger<K,V>(name(), context, serdes);
 
         context.register(this, (key, value) -> {
 
@@ -147,18 +125,6 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
     public void flush() {
     /*
       Definition of a flush, for which there is no GigaSpace equivalent
-       - Flush essentially means that all the documents in the in-memory buffer are written to new Lucene segments,
-       - These, along with all existing in-memory segments, are committed to the disk, which clears the translog.
-       - This commit is essentially a Lucene commit.
-
-    org.elasticsearch.action.admin.indices.flush.FlushRequest FlushRequest request = new FlushRequest(INDEX);
-
-    try {
-      client.indices().flush(request, RequestOptions.DEFAULT);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-        changeLogger.logChange(key, value, updateTimestamp);
      */
     }
 
@@ -166,12 +132,6 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
     public void close() {
     /*
       We don't have a GigaSpace.close equivalent, unless we use internal API
-    try {
-      client.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
     */
     }
 
@@ -182,16 +142,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
 
     @Override //StateStore
     public boolean isOpen() {
-    /*
-    try {
-      return client.ping(RequestOptions.DEFAULT);
-    } catch (IOException e) {
-      e.printStackTrace();
-      return false;
-    }
-
-     */
-        try {
+            try {
             client.getSpace().ping();
             return true;
         } catch (RemoteException e) {

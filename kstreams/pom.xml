@@ -69,6 +69,11 @@
             <artifactId>xap-openspaces</artifactId>
             <version>${gigaspaces.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.gigaspaces</groupId>
+            <artifactId>xap-full-text-search</artifactId>
+            <version>${gigaspaces.version}</version>
+        </dependency>
         <!--
                 <dependency>
                     <groupId>org.elasticsearch.client</groupId>

@@ -39,8 +39,6 @@ public class CountingProcessorSupplier implements ProcessorSupplier<String, Stri
 
         @Override
         public void process(final String key, String words) {
-            HashMap<String, Long> wordCount = new HashMap<>();
-
             String[] values = words.split("\\s+");
             for(int i=0; i < values.length; i++) {
                 String word = values[i];
