@@ -23,6 +23,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
     private Class<K> Obj1;
     private Class<V> Obj2;
     private final String storeName;
+    private final String typeName;
     private GigaSpace client;
     private ProcessorContext context;
 
@@ -30,6 +31,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
         this.Obj1 = Obj1;
         this.Obj2 = Obj2;
         this.storeName = storeName;
+        this.typeName = Utils.convertToValidJavaName(storeName);
         this.client = client;
     }
 
@@ -38,7 +40,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
         if (key == null) {
             return null;
         }
-        SpaceDocument spaceDocument = client.readById(new IdQuery<>(storeName, key));
+        SpaceDocument spaceDocument = client.readById(new IdQuery<>(typeName, key));
         if( spaceDocument != null ) {
             V value = spaceDocument.getProperty("value");
             return value;
@@ -55,7 +57,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
         properties.put("key", key);
         properties.put("value", value);
 
-        SpaceDocument spaceDocument = new SpaceDocument(this.storeName, properties);
+        SpaceDocument spaceDocument = new SpaceDocument(this.typeName, properties);
 
         client.write(spaceDocument);
 
@@ -71,7 +73,7 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
 
         context = processorContext;
         // register type
-        SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder(this.storeName)
+        SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder(this.typeName)
                 .idProperty("key", false, SpaceIndexType.EQUAL)
                 .addFixedProperty("key", Obj1)
                 .addFixedProperty("value", Obj2)
@@ -117,3 +119,4 @@ public class GigaStateStore<K,V> implements StateStore, GigaWritableStore<K, V> 
     }
 
 }
+
