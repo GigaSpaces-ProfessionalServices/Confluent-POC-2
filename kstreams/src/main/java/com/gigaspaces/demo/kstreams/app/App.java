@@ -74,7 +74,11 @@ public class App {
     streams.cleanUp();
     streams.start();
     //start notify
-
+    try{
+       System.in.read();
+    } catch (Exception e){
+	    e.printStackTrace();
+    }
     SQLQuery<SpaceDocument> template =
             new SQLQuery<SpaceDocument>(Utils.convertToValidJavaName(STORE_NAME), "value > 1");
     SpaceDocument[] results = client.readMultiple(template);
